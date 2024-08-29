@@ -37,8 +37,4 @@ app.use( cartRoutes);
 app.use( authRoutes);
 app.use( orderRoutes);
 
-module.exports = (req, res) => {
-    return new Promise((resolve) => {
-      app(req, res, resolve);
-    });
-  };
+module.exports = app;

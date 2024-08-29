@@ -5,13 +5,13 @@ const {
   getAddProductPage,
   getEditProductPage,
   getOrdersPage
-} = require('../controllers/dashboardController');
+} = require('../../controllers/dashboardController');
 
 const {
   createProduct,
   updateProduct,
   deleteProduct
-} = require('../controllers/productController');
+} = require('../../controllers/productController');
 
 const router = express.Router();
 
