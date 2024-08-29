@@ -1,11 +1,11 @@
 const express = require('express');
 require('dotenv').config();
-const connectDB = require('./config/db');
-const pageRoutes = require('./api/pageRoutes');
-const dashboardRoutes = require('./api/dashboardRoutes');
-const cartRoutes = require("./api/cartRoutes");
-const authRoutes = require('./api/authRoutes');
-const orderRoutes = require('./api/orderRoutes');
+const connectDB = require('../config/db');
+const pageRoutes = require('./pageRoutes');
+const dashboardRoutes = require('./dashboardRoutes');
+const cartRoutes = require("./cartRoutes");
+const authRoutes = require('./authRoutes');
+const orderRoutes = require('./orderRoutes');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
@@ -36,5 +36,8 @@ app.use( dashboardRoutes);
 app.use( cartRoutes);
 app.use( authRoutes);
 app.use( orderRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 module.exports = app;
