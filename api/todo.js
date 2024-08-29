@@ -10,6 +10,7 @@ let todoList = [];
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Home route to display the to-do list
 app.get('/', (req, res) => {
@@ -40,6 +41,7 @@ app.post('/complete', (req, res) => {
   }
   res.redirect('/');
 });
+
 
 module.exports = app;
 module.exports.handler = serverless(app);
