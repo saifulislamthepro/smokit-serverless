@@ -1,2 +1,17 @@
-{ "version": 2, 
-"rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
+{
+    "version": 2,
+    "builds": [
+      { "src": "api/**/*.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      { "src": "/api/(.*)", "dest": "/api/$1.js" },
+      { "src": "/(.*)", "dest": "/public/$1" }
+    ],
+    "functions": {
+      "api/**/*.js": {
+        "memory": 1024,
+        "maxDuration": 10
+      }
+    }
+  }
+  
