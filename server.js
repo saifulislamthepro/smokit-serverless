@@ -1,11 +1,6 @@
 const express = require('express');
 require('dotenv').config();
-const connectDB = require('../config/db');
-const pageRoutes = require('./pageRoutes');
-const dashboardRoutes = require('./dashboardRoutes');
-const cartRoutes = require("./cartRoutes");
-const authRoutes = require('./authRoutes');
-const orderRoutes = require('./orderRoutes');
+const connectDB = require('./config/db');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path');
@@ -28,17 +23,4 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'uploads')));
 
-
-
-// Serve pages
-app.use( pageRoutes);
-app.use( dashboardRoutes);
-app.use( cartRoutes);
-app.use( authRoutes);
-app.use( orderRoutes);
-
-module.exports = (req, res) => {
-    return new Promise((resolve) => {
-      app(req, res, resolve);
-    });
-  };
+module.exports = app;
