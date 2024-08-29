@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Product - E-Commerce</title>
+    <link rel="stylesheet" href="/dashboard.css" />
+  </head>
+  <body>
+    <h1 style="margin-bottom: 50px">Add New Product</h1>
+    <form
+      class="flex"
+      style="flex-direction: column; gap: 10px"
+      action="/dashboard/add-product"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      <div class="flex" style="flex-direction: column">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+      <div class="flex" style="flex-direction: column">
+        <label for="description">Description: </label>
+        <textarea id="description" name="description" required></textarea>
+      </div>
+      <div class="flex" style="flex-direction: column">
+        <label for="price">Price:</label>
+        <input type="number" id="price" name="price" required />
+      </div>
+      <div class="flex" style="flex-direction: column">
+        <label for="image">Image:</label>
+        <input type="file" id="image" name="image" required />
+      </div>
+      <button type="submit">Add Product</button>
+    </form>
+  </body>
+</html>
